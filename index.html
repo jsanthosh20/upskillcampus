@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>URL Shortener</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🔗 URL Shortener
+        </div>
+
+        <a href="/history" class="nav-button">
+            📊 URL History
+        </a>
+
+    </nav>
+
+
+    <!-- Main Dashboard -->
+
+    <main class="dashboard">
+
+        <section class="hero">
+
+            <h1>
+                Shorten Your URLs
+            </h1>
+
+            <p>
+                Convert long URLs into simple and shareable links.
+            </p>
+
+        </section>
+
+
+        <!-- URL Form -->
+
+        <section class="shortener-card">
+
+            <form action="/shorten"
+                  method="POST">
+
+                <label for="url">
+                    Enter your long URL
+                </label>
+
+                <div class="input-row">
+
+                    <input
+                        type="url"
+                        id="url"
+                        name="url"
+                        placeholder="https://example.com/your-long-url"
+                        required>
+
+                    <button type="submit">
+                        🔗 Shorten URL
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Error -->
+
+            {% if error %}
+
+            <div class="error">
+                ⚠️ {{ error }}
+            </div>
+
+            {% endif %}
+
+
+            <!-- Short URL -->
+
+            {% if short_url %}
+
+            <div class="result-card">
+
+                <div>
+
+                    <h3>
+                        🎉 Your Short URL
+                    </h3>
+
+                    <a
+                        id="shortURL"
+                        href="{{ short_url }}"
+                        target="_blank">
+
+                        {{ short_url }}
+
+                    </a>
+
+                </div>
+
+                <button
+                    class="copy-main-button"
+                    onclick="copyURL('{{ short_url }}')">
+
+                    📋 Copy
+
+                </button>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if message %}
+
+            <div class="message">
+                ℹ️ {{ message }}
+            </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Statistics -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔗
+                </div>
+
+                <div>
+
+                    <h2>
+                        {{ total_urls }}
+                    </h2>
+
+                    <p>
+                        Total URLs
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📈
+                </div>
+
+                <div>
+
+                    <h2>
+                        {{ total_clicks }}
+                    </h2>
+
+                    <p>
+                        Total Clicks
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features -->
+
+        <section class="features">
+
+            <div class="feature-card">
+
+                <span>⚡</span>
+
+                <h3>
+                    Fast
+                </h3>
+
+                <p>
+                    Generate short URLs instantly.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>🔒</span>
+
+                <h3>
+                    Reliable
+                </h3>
+
+                <p>
+                    URLs are safely stored in SQLite.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>📊</span>
+
+                <h3>
+                    Trackable
+                </h3>
+
+                <p>
+                    Monitor clicks on your links.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Python URL Shortener | Flask + SQLite
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function copyURL(url) {
+
+            navigator.clipboard.writeText(url)
+                .then(function() {
+
+                    alert("Short URL copied!");
+
+                })
+                .catch(function() {
+
+                    alert("Unable to copy URL.");
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

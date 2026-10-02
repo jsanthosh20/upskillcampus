@@ -1,0 +1,448 @@
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-button {
+    text-decoration: none;
+    background: #4f46e5;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.nav-button:hover {
+    background: #3730a3;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 35px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   SHORTENER CARD
+   ========================================================= */
+
+.shortener-card {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.shortener-card label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.input-row button {
+    padding: 15px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.input-row button:hover {
+    background: #3730a3;
+}
+
+
+/* =========================================================
+   SHORT URL RESULT
+   ========================================================= */
+
+.result-card {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-card h3 {
+    margin-bottom: 8px;
+}
+
+.result-card a {
+    color: #2563eb;
+    word-break: break-all;
+}
+
+.copy-main-button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 7px;
+    background: #16a34a;
+    color: white;
+    cursor: pointer;
+}
+
+.copy-main-button:hover {
+    background: #15803d;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.error {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   INFORMATION MESSAGE
+   ========================================================= */
+
+.message {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+    font-size: 30px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+}
+
+.stat-card p {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.feature-card {
+    background: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+}
+
+.feature-card span {
+    font-size: 30px;
+}
+
+.feature-card h3 {
+    margin: 12px 0 8px;
+}
+
+.feature-card p {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   HISTORY PAGE
+   ========================================================= */
+
+.history-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.history-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+/* Back button */
+
+.back-button {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* Search */
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+
+/* History table */
+
+.history-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.history-container th {
+    background: #4f46e5;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.history-container td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.history-container tr:hover {
+    background: #f9fafb;
+}
+
+
+/* Original URL */
+
+.history-container td:first-child {
+    max-width: 400px;
+    word-break: break-all;
+}
+
+
+/* Short URL */
+
+.short-link {
+    color: #2563eb;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.short-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Copy button */
+
+.copy-button {
+    margin-left: 8px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Delete button */
+
+.delete-button {
+    margin-left: 8px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #dc2626;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .result-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .history-container {
+        width: 95%;
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    .history-container table {
+        min-width: 800px;
+    }
+}
